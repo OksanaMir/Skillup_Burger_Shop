@@ -20,15 +20,15 @@ function Login() {
 	let inputs;
 	if (justifyActive === 'tab1') {
 		inputs = [
-			{ label: 'Email address', id: 'form1', type: 'email' },
-			{ label: 'Password', id: 'form2', type: 'password' }
+			{ label: 'Email address', type: 'email' },
+			{ label: 'Password', type: 'password' }
 		];
 	} else if (justifyActive === 'tab2') {
 		inputs = [
-			{ label: 'Name', id: 'form1', type: 'text' },
-			{ label: 'Username', id: 'form1', type: 'text' },
-			{ label: 'Email', id: 'form1', type: 'email' },
-			{ label: 'Password', id: 'form1', type: 'password' }
+			{ label: 'Name', type: 'text' },
+			{ label: 'Username', type: 'text' },
+			{ label: 'Email', type: 'email' },
+			{ label: 'Password', type: 'password' }
 		];
 	}
 	let tabs = [
@@ -81,38 +81,33 @@ function Login() {
 			<MDBTabsContent>
 				<MDBTabsPane show={justifyActive === 'tab1'}>
 					<div className="text-center mb-3">
-						{' '}
 						<p>Sign in with:</p>
 						<div
 							className="d-flex justify-content-between mx-auto"
 							style={{ width: '40%' }}
 						>
 							{icons.map((ic, i) => (
-								<>
-									<MDBBtn
-										key={i}
-										tag="a"
-										color="none"
-										className="m-1"
-										style={{ color: '#1266f1' }}
-									>
-										<MDBIcon fab icon={ic} size="sm" />
-									</MDBBtn>{' '}
-								</>
+								<MDBBtn
+									key={i}
+									tag="a"
+									color="none"
+									className="m-1"
+									style={{ color: '#1266f1' }}
+								>
+									<MDBIcon fab icon={ic} size="sm" />
+								</MDBBtn>
 							))}
 						</div>
 						<p className="text-center mt-3">or:</p>{' '}
 					</div>
 					{inputs.map((input, i) => (
-						<>
-							<MDBInput
-								key={i}
-								wrapperClass="mb-4"
-								label={input.label}
-								id={input.id}
-								type={input.type}
-							/>{' '}
-						</>
+						<MDBInput
+							key={i}
+							wrapperClass="mb-4"
+							label={input.label}
+							id={i}
+							type={input.type}
+						/>
 					))}
 					<div className="d-flex justify-content-between mx-4 mb-4">
 						{' '}
@@ -130,7 +125,6 @@ function Login() {
 					</p>
 				</MDBTabsPane>
 				<MDBTabsPane show={justifyActive === 'tab2'}>
-					{' '}
 					<div className="text-center mb-3">
 						<p>Sign up with:</p>
 						<div
@@ -138,31 +132,27 @@ function Login() {
 							style={{ width: '40%' }}
 						>
 							{icons.map((ic, i) => (
-								<>
-									<MDBBtn
-										key={i}
-										tag="a"
-										color="none"
-										className="m-1"
-										style={{ color: '#1266f1' }}
-									>
-										<MDBIcon fab icon={ic} size="sm" />
-									</MDBBtn>{' '}
-								</>
+								<MDBBtn
+									key={i}
+									tag="a"
+									color="none"
+									className="m-1"
+									style={{ color: '#1266f1' }}
+								>
+									<MDBIcon fab icon={ic} size="sm" />
+								</MDBBtn>
 							))}
 						</div>
 						<p className="text-center mt-3">or:</p>{' '}
 					</div>
 					{inputs.map((input, i) => (
-						<>
-							<MDBInput
-								key={i}
-								wrapperClass="mb-4"
-								label={input.label}
-								id={input.id}
-								type={input.type}
-							/>{' '}
-						</>
+						<MDBInput
+							key={i}
+							wrapperClass="mb-4"
+							label={input.label}
+							id={i}
+							type={input.type}
+						/>
 					))}
 					<div className="d-flex justify-content-center mb-4">
 						{' '}

@@ -16,15 +16,24 @@ const Header = ({ isAuthenticated = false }) => {
 				<Link to="/">Home</Link>
 				<Link to="/contact">Contact</Link>{' '}
 				<Link to="/about">About</Link>{' '}
+				<Link to="/cart">
+					<FiShoppingCart />{' '}
+				</Link>
 				{!isAuthenticated && (
 					<Link to="/me">
 						<FaUser />{' '}
 					</Link>
 				)}{' '}
-				<Link to="/cart">
-					<FiShoppingCart />{' '}
-				</Link>
-				<DropdownMenu />{' '}
+				{isAuthenticated && (
+					<Link
+						to="/login"
+
+						// data-bs-toggle="offcanvas"
+					>
+						<FiLogIn />
+					</Link>
+				)}
+				<DropdownMenu />
 			</div>
 		</nav>
 	);

@@ -2,14 +2,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/home/Home";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
-import Contact from "./components/contact/Contact";
-// Add module imports for CART
+import Contact from './components/contact/Contact';
 import Cart from './components/cart/Cart';
-// Add module imports for Shipping
 import Shipping from './components/cart/Shipping';
 import Login from './components/login/Login';
 import Profile from './components/profile/Profile';
-// Add module imports for MY ORDERS
 import MyOrders from './components/myOrders/MyOrders';
 import OrderDetails from './components/myOrders/OrderDetails';
 import About from './components/about/About';
@@ -28,6 +25,8 @@ import './styles/profile.scss';
 import './styles/table.scss';
 import './styles/orderDetails.scss';
 import './styles/about.scss';
+import './styles/DropdownMenu.scss';
+import './styles/colors.scss';
 
 function App() {
 	return (
@@ -41,7 +40,7 @@ function App() {
 				<Route path="/shipping" element={<Shipping />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/me" element={<Profile />} />
-				<Route path="/orders" element={<MyOrders />} />
+				<Route path="/MyOrders" element={<MyOrders />} />
 				<Route path="/order/:id" element={<OrderDetails />} />
 			</Routes>
 
