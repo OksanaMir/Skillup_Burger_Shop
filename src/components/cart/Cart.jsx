@@ -82,7 +82,7 @@ const Cart = () => {
 					<div>
 						<h4>Shipping Charges</h4>
 						<p>₹{shipPrice}</p>
-					</div>{' '}
+					</div>
 					<div>
 						<h4>Total</h4>
 						<p>₹{totalPrice + totalPrice * 0.18 + shipPrice}</p>

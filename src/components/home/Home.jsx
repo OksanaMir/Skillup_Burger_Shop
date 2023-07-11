@@ -16,9 +16,9 @@ const Home = () => {
 		<>
 			<section className="home">
 				<div>
-					<motion.h1 {...options}>Burger Shop</motion.h1>{' '}
+					<motion.h1 {...options}>Burger Shop</motion.h1>
 					<motion.p {...options} transition={{ delay: 0.2 }}>
-						Give yourself a tasty burger.{' '}
+						Give yourself a tasty burger.
 					</motion.p>
 				</div>
 				<motion.a
@@ -30,9 +30,9 @@ const Home = () => {
 					whileInView={{ y: 0, opacity: 1 }}
 					transition={{ delay: 0.4 }}
 				>
-					Explore Menu{' '}
+					Explore Menu
 				</motion.a>
-			</section>{' '}
+			</section>
 			<Menu />
 			<Founder />
 		</>

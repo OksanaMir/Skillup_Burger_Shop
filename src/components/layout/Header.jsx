@@ -10,20 +10,20 @@ const Header = ({ isAuthenticated = false }) => {
 	return (
 		<nav>
 			<motion.div initial={{ x: '-100%' }} whileInView={{ x: 0 }}>
-				<IoFastFoodOutline />{' '}
+				<IoFastFoodOutline />
 			</motion.div>
 			<div>
 				<Link to="/">Home</Link>
-				<Link to="/contact">Contact</Link>{' '}
-				<Link to="/about">About</Link>{' '}
+				<Link to="/contact">Contact</Link>
+				<Link to="/about">About</Link>
 				<Link to="/cart">
-					<FiShoppingCart />{' '}
+					<FiShoppingCart />
 				</Link>
 				{!isAuthenticated && (
 					<Link to="/me">
-						<FaUser />{' '}
+						<FaUser />
 					</Link>
-				)}{' '}
+				)}
 				{isAuthenticated && (
 					<Link
 						to="/login"

@@ -60,22 +60,22 @@ function Login() {
 					</MDBTabsItem>
 				))}
 				{/* <MDBTabsItem>
-					{' '}
+					
 					<MDBTabsLink
 						onClick={() => handleJustifyClick('tab1')}
 						active={justifyActive === 'tab1'}
 					>
-						Login{' '}
+						Login
 					</MDBTabsLink>
-				</MDBTabsItem>{' '}
+				</MDBTabsItem>
 				<MDBTabsItem>
 					<MDBTabsLink
 						onClick={() => handleJustifyClick('tab2')}
 						active={justifyActive === 'tab2'}
 					>
-						{' '}
+						
 						Register
-					</MDBTabsLink>{' '}
+					</MDBTabsLink>
 				</MDBTabsItem> */}
 			</MDBTabs>
 			<MDBTabsContent>
@@ -98,7 +98,7 @@ function Login() {
 								</MDBBtn>
 							))}
 						</div>
-						<p className="text-center mt-3">or:</p>{' '}
+						<p className="text-center mt-3">or:</p>
 					</div>
 					{inputs.map((input, i) => (
 						<MDBInput
@@ -110,18 +110,17 @@ function Login() {
 						/>
 					))}
 					<div className="d-flex justify-content-between mx-4 mb-4">
-						{' '}
 						<MDBCheckbox
 							name="flexCheck"
 							value=""
 							id="flexCheckDefault"
 							label="Remember me"
 						/>
-						<a href="!#">Forgot password?</a>{' '}
+						<a href="!#">Forgot password?</a>
 					</div>
-					<MDBBtn className="mb-4 w-100">Sign in</MDBBtn>{' '}
+					<MDBBtn className="mb-4 w-100">Sign in</MDBBtn>
 					<p className="text-center">
-						Not a member? <a href="#!">Register</a>{' '}
+						Not a member? <a href="#!">Register</a>
 					</p>
 				</MDBTabsPane>
 				<MDBTabsPane show={justifyActive === 'tab2'}>
@@ -143,7 +142,7 @@ function Login() {
 								</MDBBtn>
 							))}
 						</div>
-						<p className="text-center mt-3">or:</p>{' '}
+						<p className="text-center mt-3">or:</p>
 					</div>
 					{inputs.map((input, i) => (
 						<MDBInput
@@ -155,16 +154,15 @@ function Login() {
 						/>
 					))}
 					<div className="d-flex justify-content-center mb-4">
-						{' '}
 						<MDBCheckbox
 							name="flexCheck"
 							id="flexCheckDefault"
 							label="I have read and agree to the terms"
-						/>{' '}
+						/>
 					</div>
-					<MDBBtn className="mb-4 w-100">Sign up</MDBBtn>{' '}
+					<MDBBtn className="mb-4 w-100">Sign up</MDBBtn>
 				</MDBTabsPane>
-			</MDBTabsContent>{' '}
+			</MDBTabsContent>
 		</MDBContainer>
 	);
 }

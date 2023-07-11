@@ -5,7 +5,6 @@ import Popup from 'reactjs-popup';
 const Contact = () => {
 	return (
 		<section className="contact">
-			{' '}
 			<motion.form
 				initial={{
 					x: '-100vw',
@@ -18,13 +17,13 @@ const Contact = () => {
 				transition={{ delay: 0.2 }}
 			>
 				<h2>Contact Us</h2>
-				<input type="text" placeholder="Name" />{' '}
+				<input type="text" placeholder="Name" />
 				<input type="email" placeholder="Email" />
 				<textarea
 					placeholder="Message..."
 					cols="30"
 					rows="10"
-				></textarea>{' '}
+				></textarea>
 				<Popup trigger={<button type="button">Send</button>}>
 					<div
 						style={{
@@ -66,7 +65,7 @@ const Contact = () => {
 					}}
 				>
 					<img src={burger} alt="Burger" />
-				</motion.div>{' '}
+				</motion.div>
 			</motion.div>
 		</section>
 	);
