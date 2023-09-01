@@ -23,14 +23,10 @@ const MenuCard = ({ itemNum, burgerSrc, price, title, handler, delay = 0 }) => {
 				<img src={burgerSrc} alt={itemNum} />
 
 				<h5>₹{price}</h5>
-
 				<p>{title}</p>
 				<Popup
-					trigger={
-						<button onClick={() => handler(itemNum)}>
-							Buy Now
-						</button>
-					}
+					onOpen={() => handler(itemNum)}
+					trigger={<button value={itemNum}>Buy Now</button>}
 				>
 					<div
 						style={{

@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Country, State, City } from 'country-state-city';
 import Popup from 'reactjs-popup';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const Shipping = () => {
 	const [code, setCode] = useState('');
 	const [city, setCity] = useState('');
+
+	const history = useNavigate();
 
 	// useEffect(() => {
 	let allCounrties = Country.getAllCountries();
@@ -26,10 +29,15 @@ const Shipping = () => {
 		provinces = State.getStatesOfCountry(code);
 	}
 
+	// const confirmForm = () => {
+	// 	history('/MyOrders');
+	// };
+
 	return (
 		<section className="shipping">
 			<main>
 				<h1>Shipping Details</h1>
+				{/* <form onSubmit={confirmForm}> */}
 				<form>
 					<div>
 						<label>H.No.</label>

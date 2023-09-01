@@ -1,0 +1,38 @@
+{
+	"items": [
+		{ "name": "Cheese Burger", "price": 200, "numberInCart": 1 },
+		{ "name": "Veg Cheese Burger", "price": 500, "numberInCart": 2 },
+		{ "name": "Burger Fries", "price": 1800, "numberInCart": 1 }
+	],
+	"orderSummary": [
+		{
+			"detailCategory": "Shipping",
+			"details": [
+				{ "dname": "Address", "description": "sjda 12-32ss dsad" }
+			]
+		},
+		{
+			"detailCategory": "Contact",
+			"details": [
+				{ "dname": "Name", "description": "Stuart" },
+				{ "dname": "Phone", "description": "2131232123" }
+			]
+		},
+		{
+			"detailCategory": "Status",
+			"details": [
+				{ "dname": "Order Status", "description": "Processing" },
+				{ "dname": "Placed At", "description": "23-02-2002" },
+				{ "dname": "Paid At", "description": "23-02-2003" }
+			]
+		},
+		{
+			"detailCategory": "Payment",
+			"details": [
+				{ "dname": "Payment Method", "description": "COD" },
+				{ "dname": "Payment Reference", "description": "asdasdsadsad" },
+				{ "dname": "Paid At", "description": "23-02-2003" }
+			]
+		}
+	]
+}

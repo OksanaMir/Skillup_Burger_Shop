@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/DropdownMenu.scss';
 import '../../styles/colors.scss';
 
-function DropdownMenu() {
+const DropdownMenu = props => {
 	const [navLinks, setNavLinks] = useState([]);
 
 	useEffect(() => {
@@ -15,6 +15,18 @@ function DropdownMenu() {
 		setNavLinks(navs);
 	}, []);
 
+	const showNav = navName => {
+		if (
+			(navName === 'Login' && props.toShow === false) ||
+			(navName === 'Orders' && props.toShow === true) ||
+			(navName === 'Logout' && props.toShow === true)
+		) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+
 	return (
 		<div>
 			<nav
@@ -22,7 +34,9 @@ function DropdownMenu() {
 				// data-bs-toggle="offcanvas"
 			>
 				<div className="container">
-					<a className="navbar-brand" href="#"></a>
+					{/* <a className="navbar-brand" href="#">
+				
+					</a> */}
 					<div className="btn-group">
 						<button
 							type="button"
@@ -36,14 +50,16 @@ function DropdownMenu() {
 						<ul className="dropdown-menu dropdown-menu-end">
 							{navLinks.map((d, i) => (
 								<li key={i}>
-									<Link to={d.path}>
-										<button
-											className="dropdown-item"
-											type="button"
-										>
-											{d.name}
-										</button>
-									</Link>
+									{showNav(d.name) && (
+										<Link to={d.path}>
+											<button
+												className="dropdown-item"
+												type="button"
+											>
+												{d.name}
+											</button>
+										</Link>
+									)}
 								</li>
 							))}
 						</ul>
@@ -52,6 +68,6 @@ function DropdownMenu() {
 			</nav>
 		</div>
 	);
-}
+};
 
 export default DropdownMenu;

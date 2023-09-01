@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { IoFastFoodOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
@@ -6,7 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import DropdownMenu from './DropdownMenu';
 
-const Header = ({ isAuthenticated = false }) => {
+const Header = ({ isAuthenticated = false, inCartNumber }) => {
 	return (
 		<nav>
 			<motion.div initial={{ x: '-100%' }} whileInView={{ x: 0 }}>
@@ -18,22 +19,20 @@ const Header = ({ isAuthenticated = false }) => {
 				<Link to="/about">About</Link>
 				<Link to="/cart">
 					<FiShoppingCart />
+					<span>{inCartNumber}</span>
 				</Link>
-				{!isAuthenticated && (
+
+				{isAuthenticated ? (
 					<Link to="/me">
 						<FaUser />
 					</Link>
-				)}
-				{isAuthenticated && (
-					<Link
-						to="/login"
-
-						// data-bs-toggle="offcanvas"
-					>
+				) : (
+					<Link to="/login">
 						<FiLogIn />
 					</Link>
 				)}
-				<DropdownMenu />
+
+				<DropdownMenu toShow={isAuthenticated} />
 			</div>
 		</nav>
 	);

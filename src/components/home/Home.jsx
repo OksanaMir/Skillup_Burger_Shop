@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Founder from './Founder';
 import Menu from './Menu';
 
-const Home = () => {
+const Home = props => {
 	const options = {
 		initial: { x: '-100%', opacity: 0 },
 		whileInView: {
@@ -33,7 +33,12 @@ const Home = () => {
 					Explore Menu
 				</motion.a>
 			</section>
-			<Menu />
+			<Menu
+				setCounter={props.setCounter}
+				counter={props.counter}
+				setItemsAdded={props.setItemsAdded}
+				itemsAdded={props.itemsAdded}
+			/>
 			<Founder />
 		</>
 	);

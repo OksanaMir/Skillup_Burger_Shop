@@ -5,12 +5,13 @@ import burger2 from '../../assets/burger2.png';
 import burger3 from '../../assets/burger3.png';
 
 const cartItemsList = [
-	{ title: 'Cheese Burger', img: burger1, price: 200 },
-	{ title: 'Veg Cheese Burger', img: burger2, price: 500 },
+	{ src: burger1, price: 200, title: 'Cheese Burger', delay: 0.1 },
+	{ src: burger2, price: 500, title: 'Veg Cheese Burger', delay: 0.5 },
 	{
-		title: 'Cheese Burger With French Fries',
-		img: burger3,
-		price: 800
+		src: burger3,
+		price: 800,
+		title: 'Cheese Burger with French Fries',
+		delay: 0.8
 	}
 ];
 
@@ -35,9 +36,11 @@ const Cart = () => {
 	const [shipPrice, setShipPrice] = useState(0);
 
 	const increment = item => {
+		console.log(item); //kind
 		const prevState = [...inCartValue];
 		const prevTotalPrice = totalPrice;
 		prevState[item]++;
+
 		setInCartValue(prevState);
 		setTotalPrice(prevTotalPrice + cartItemsList[item].price);
 		setShipPrice(200);
@@ -46,9 +49,12 @@ const Cart = () => {
 	const decrement = item => {
 		const prevState = [...inCartValue];
 		const prevTotalPrice = totalPrice;
+
 		if (prevState[item] > 0) {
 			prevState[item]--;
+
 			setInCartValue(prevState);
+
 			setTotalPrice(prevTotalPrice - cartItemsList[item].price);
 		}
 		if (totalPrice === 0) {
@@ -63,7 +69,7 @@ const Cart = () => {
 					<CartItem
 						key={i}
 						title={item.title}
-						img={item.img}
+						img={item.src}
 						value={inCartValue[i]}
 						increment={() => increment(i)}
 						decrement={() => decrement(i)}

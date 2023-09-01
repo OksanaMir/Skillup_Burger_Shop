@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./components/home/Home";
-import Footer from "./components/layout/Footer";
-import Header from "./components/layout/Header";
+import { useState } from 'react';
+import Home from './components/home/Home';
+import Footer from './components/layout/Footer';
+import Header from './components/layout/Header';
 import Contact from './components/contact/Contact';
 import Cart from './components/cart/Cart';
 import Shipping from './components/cart/Shipping';
@@ -29,17 +30,54 @@ import './styles/DropdownMenu.scss';
 import './styles/colors.scss';
 
 function App() {
+	const [isAuthenticatedUser, setIsAuthenticatedUser] = useState(false);
+	const [counter, setCounter] = useState(null);
+	const [itemsAdded, setItemsAdded] = useState([]);
+
 	return (
 		<Router>
-			<Header isAuthenticated={true} />
+			<Header
+				isAuthenticated={isAuthenticatedUser}
+				inCartNumber={counter}
+			/>
 			<Routes>
-				<Route path="/" element={<Home />} />
+				<Route
+					path="/"
+					element={
+						<Home
+							setCounter={setCounter}
+							counter={counter}
+							setItemsAdded={setItemsAdded}
+							itemsAdded={itemsAdded}
+						/>
+					}
+				/>
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/about" element={<About />} />
-				<Route path="/cart" element={<Cart />} />
+				<Route
+					path="/cart"
+					element={
+						<Cart
+						// items={itemsAdded}
+						// setCounter={setCounter}
+						// counter={counter}
+						// setItemsAdded={setItemsAdded}
+						/>
+					}
+				/>
 				<Route path="/shipping" element={<Shipping />} />
-				<Route path="/login" element={<Login />} />
-				<Route path="/me" element={<Profile />} />
+				<Route
+					path="/login"
+					element={
+						<Login setAuthenticated={setIsAuthenticatedUser} />
+					}
+				/>
+				<Route
+					path="/me"
+					element={
+						<Profile setAuthenticated={setIsAuthenticatedUser} />
+					}
+				/>
 				<Route path="/MyOrders" element={<MyOrders />} />
 				<Route path="/order/:id" element={<OrderDetails />} />
 			</Routes>
